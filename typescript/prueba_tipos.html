@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <pre id="b1"></pre>
+    </body>
+    <script>
+        var b1 = document.getElementById("b1");
+
+        checkif("1, no argument"                        );
+        checkif("2, undefined explicitly",     undefined);
+        checkif("3, null explicitly",               null);
+        checkif("4, the 0",                            0);
+        checkif("5, empty string",                    '');
+        checkif("6, string",                    "string");
+        checkif("7, number",                      123456);
+
+        function checkif (a1, a2) {
+            print("\ncheckif(), " + a1 + ":");
+            if (a2 == undefined) {
+                print("==undefined:    YES");
+            } else {
+                print("==undefined:    NO");
+            }
+            if (a2 === undefined) {
+                print("===undefined:   YES");
+            } else {
+                print("===undefined:   NO");
+            }
+            if (a2 == null) {
+                print("==null:         YES");
+            } else {
+                print("==null:         NO");
+            }
+            if (a2 === null) {
+                print("===null:        YES");
+            } else {
+                print("===null:        NO");
+            }
+            if (a2 == '') {
+                print("=='':           YES");
+            } else {
+                print("=='':           NO");
+            }
+            if (a2 === '') {
+                print("==='':          YES");
+            } else {
+                print("==='':          NO");
+            }
+            if (isNaN(a2)) {
+                print("isNaN():        YES");
+            } else {
+                print("isNaN():        NO");
+            }
+            if (a2) {
+                print("if-?:           YES");
+            } else {
+                print("if-?:           NO");
+            }
+                print("typeof():       " + typeof(a2));
+        }
+
+        function print(v) {
+            b1.innerHTML += v + "\n";
+        }
+
+    </script>
+</html>
